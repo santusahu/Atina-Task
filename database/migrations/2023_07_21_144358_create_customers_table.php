@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); 
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('mobile_number');
+            $table->string('email')->unique();
+            $table->string('profile_image')->nullable();
             $table->timestamps();
+            // Foreign key constraint to link customer to the user table
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

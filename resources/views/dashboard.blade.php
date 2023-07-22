@@ -1,17 +1,33 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.layout')
+{{-- Page Title --}}
+@section('title')
+  Client Dashboard
+@endsection
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+{{-- Other usable css links --}}
+@section('css_links')
+	<link rel="stylesheet" href="">
+@endsection
+
+{{-- Other css --}}
+@section('other_css')
+	<style>
+
+  </style>
+@endsection
+
+{{-- Main content of the pages --}}
+@section('main_content')
+
+@endsection
+{{-- Main content End --}}
+
+{{-- Other Js pluging   --}}
+@section('js_links')
+  <script type="text/javascript" src=""></script>
+@endsection
+
+{{-- Custom Js Scripts --}}
+@section('js_scripts')
+
+@endsection

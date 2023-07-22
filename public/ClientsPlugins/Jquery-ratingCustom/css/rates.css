@@ -1,0 +1,82 @@
+
+.rates-container {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.rates-container .star {
+    font-size: 50px;
+    line-height: 1;
+    color: #282846;
+    cursor: pointer;
+}
+
+.rates-container .star:not(:last-child) {
+    margin-right: 20px;
+}
+
+.category-rating input {
+    display: none !important;
+}
+
+.category-rating .rates-container .star {
+    font-size: 18px;
+    color: #7F7FAA;
+}
+
+.category-rating .rates-container .star:not(:last-child) {
+    margin-right: 5px;
+}
+
+.category-rating .msg-text {
+    display: none !important;
+}
+
+.star.rates-active:before,
+.star.rates-booking:before,
+.star.rates-shootquality:before,
+.star.rates-customersuppot:before,
+.star.rates-price:before,
+.star.rates-editingquality:before,
+.star.rates-submission:before {
+    content: "\f004" !important;
+}
+
+.rates-container .star.rates-active{
+    color: #282846;
+}
+
+.category-rating .star.rates-booking {
+    color: red;
+}
+
+.category-rating .star.rates-shootquality {
+    color: yellow;
+}
+
+.category-rating .star.rates-customersuppot {
+    color: gray;
+}
+
+.category-rating .star.rates-price {
+    color: blue;
+}
+
+.category-rating .star.rates-editingquality {
+    color: violet;
+}
+
+.category-rating .star.rates-submission {
+    color: pink;
+}
+
+@media screen and (max-width: 767px) {
+    .category-rating .rates-container .star:not(:last-child) {
+        margin-right: 3px;
+    }
+    
+    .category-rating .rates-container .star {
+        font-size: 16px;
+    }    
+}

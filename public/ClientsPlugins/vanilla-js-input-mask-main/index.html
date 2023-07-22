@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input mask</title>
+</head>
+
+<body>
+  <input class="masked" type="tel" data-pattern="+*(***)***-**-**" placeholder="+1(234)567-89-10">
+
+  <input class="masked prefixed" type="tel" data-pattern="+**(***) *(**)-**-**" data-prefix="+99(888)"
+    placeholder="+99(888) 1(23)-45-67">
+
+  <input class="masked prefixed" type="text" data-pattern="+*(***)***-**-**" data-prefix="+9"
+    placeholder="+9(123)456-78-90">
+
+    <script src="./js/input-mask.js"></script>
+</body>
+
+</html>
