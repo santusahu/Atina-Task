@@ -37,7 +37,7 @@
   <form action="{{route('SaveCustomer')}}" onsubmit="return validateForm(event)"  method="POST" enctype="multipart/form-data">
     @csrf
     <div class="mb-3 mt-3">
-      <label for="first_name">First name:</label>
+      <label class="required"  for="first_name">First name:</label>
       <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="first_name" value="{{ old('first_name') }}" onkeypress ="return isAlphabet(event)">
       @error('first_name')
         <span class="text-danger">{{ $message }}</span>
@@ -53,7 +53,7 @@
       
     </div>
     <div class="mb-3 mt-3">
-      <label for="mobile_number">Mobile Number:</label>
+      <label class="required"  for="mobile_number">Mobile Number:</label>
       <input type="text" class="form-control" id="mobile_number" placeholder="Enter Mobile Number" name="mobile_number" value="{{ old('mobile_number') }}" maxlength="10" onkeypress="return isNumber(event)" onchange="isVaildNumber()" >
       @error('mobile_number')
         <span class="text-danger ">{{ $message }}</span>
@@ -61,7 +61,7 @@
       <span class="text-danger isVaildNumber"></span>
     </div>
     <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Email:</label>
+      <label class="required"  for="email" class="form-label">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
       @error('email')
         <span class="text-danger">{{ $message }}</span>
@@ -70,7 +70,7 @@
 
     </div>
     <div class="mb-3">
-      <label for="password">Password:</label>
+      <label class="required"  for="password">Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
       @error('password')
         <span class="text-danger">{{ $message }}</span>
@@ -78,7 +78,7 @@
       <span class="text-danger isVaildPassword"></span>
     </div>
     <div class="mb-3">
-      <label for="password_confirmation">Confirm Password:</label>
+      <label class="required" for="password_confirmation">Confirm Password:</label>
       <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm password" name="password_confirmation">
       @error('password_confirmation')
         <span class="text-danger">{{ $message }}</span>

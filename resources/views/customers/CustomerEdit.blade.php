@@ -41,7 +41,7 @@
   <form action="{{route('UpdateCustomer' , [$customer->id])}}" method="POST" enctype="multipart/form-data"  onsubmit="return validateForm(event)" >
     @csrf
     <div class="mb-3 mt-3">
-      <label for="first_name">First name:</label>
+      <label class="required"  for="first_name">First name:</label>
       <input type="hidden" name="user_id" value="{{$customer->user_id}}">
       <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="first_name" value="{{$customer->first_name}}" onkeypress ="return isAlphabet(event)">
       @error('first_name')
@@ -59,7 +59,7 @@
     </div>
 
     <div class="mb-3 mt-3">
-      <label for="mobile_number">Mobile Number:</label>
+      <label class="required"  for="mobile_number">Mobile Number:</label>
       <input type="text" class="form-control" id="mobile_number" minlength="10" maxlength="10" placeholder="Enter Mobile Number" name="mobile_number" value="{{$customer->mobile_number}}" onkeypress="return isNumber(event)" onchange="isVaildNumber()" >
       @error('mobile_number')
         <span class="text-danger ">{{ $message }}</span>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Email:</label>
+      <label class="required" for="email" class="form-label">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{{$customer->email}}">
       @error('email')
         <span class="text-danger">{{ $message }}</span>

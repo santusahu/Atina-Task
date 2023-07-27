@@ -45,7 +45,7 @@
     @csrf
     @method('put')
     <div class="mb-3 mt-3">
-      <label for="current_password">Current Password:</label>
+      <label class="required" for="current_password">Current Password:</label>
       <input type="password" class="form-control" id="current_password" placeholder="Enter Current Password" name="current_password">
       <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
         
@@ -54,14 +54,14 @@
     </div>
 
     <div class="mb-3 mt-3">
-      <label for="password">New Password:</label>
+      <label class="required" for="password">New Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Enter New Password" name="password">
       <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
     
     </div>
 
     <div class="mb-3 mt-3">
-      <label for="password_confirmation">Confirm Password</label>
+      <label class="required" for="password_confirmation">Confirm Password</label>
       <input type="password" class="form-control" id="password_confirmation" placeholder="Enter Confirm Password" name="password_confirmation">
       <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
     </div>

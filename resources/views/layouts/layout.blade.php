@@ -17,7 +17,10 @@
 
   {{-- styling --}}
   <style>
-
+    .required::after{
+      Content:  " * ";
+      Color: #f00;
+    }
   </style>
 
   {{-- Other Css Styles --}}
