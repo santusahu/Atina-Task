@@ -58,10 +58,15 @@ class CustomerController extends Controller
             $status = $user->save();
     
             if($status){
-                $file = $request->file('profile_image');
-                $filename = $file->getClientOriginalName();
-                $file_path = "uploades/profile_image/";
-                $profile_image_status = $file->move($file_path, $filename);
+                if ($request->hasFile('profile_image')) {
+                    $file = $request->file('profile_image');
+                    $filename = $file->getClientOriginalName();
+                    $file_path = config('app.global_variables.CustomerProfilePath');
+                    $file_path = "uploades/profile_image/";
+                    $profile_image_status = $file->move($file_path, $filename);
+                } else {
+                    $filename = ''; 
+                }
                 
                 $customer = customer::create([
                     'user_id' => $user->id,

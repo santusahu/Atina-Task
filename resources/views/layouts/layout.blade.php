@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   {{-- Page Title --}}
   <title>@yield('title')</title>
-  <title>Customers List</title>
-
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="{{ asset('ClientsPlugins/bootstrap-5.1.3-dist/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('ClientsPlugins/fontawesome-free/css/all.min.css') }}">
@@ -45,7 +43,14 @@
               <a class="nav-link" href="{{ route('AddCustomer') }}">Add Customer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"href="{{ route('CustomerList') }}">Customer List</a>
+              <a class="nav-link" href="{{ route('CustomerList') }}">Customer List</a>
+            </li>
+            <li>
+              <!-- Authentication -->
+              <form class="d-none" method="POST" id="logout-form" action="{{ route('logout') }}">
+                @csrf
+              </form>
+              <a class="nav-link" href="route('logout')" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
             </li>
           </ul>
         </div>
@@ -59,12 +64,27 @@
   <script src="{{ asset('ClientsPlugins/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('ClientsPlugins\jquery\jquery.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('ClientsPlugins\jquery-nice-select-1.1.0\js\jquery.nice-select.js') }}"></script>
-	<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+
+  {{-- common js script --}}
+  <script src="{{ asset('ClientsPlugins\js\common_js_new.js') }}"></script>
 
 	@yield('js_links')
 
 	@yield('js_scripts')
 
+  <script>
+    // mobile number validation
+    const isVaildNumber = () => {
+      console.log('isVaildNumber')
+
+      const mobile_number = $('#mobile_number').val().trim();
+      if(mobile_number.length != 10){
+        $('.isVaildNumber').text('Not a vaild number')
+      }else{
+        $('.isVaildNumber').text('')
+      }
+    }
+  </script>
   
 </body>
 </html>

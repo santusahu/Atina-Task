@@ -185,4 +185,9 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    // Other configurations...
+    'global_variables' => [
+        'CustomerProfilePath' => 'uploades/profile_image/',
+    ],
+
 ];

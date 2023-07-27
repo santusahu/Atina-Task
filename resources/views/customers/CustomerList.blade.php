@@ -41,11 +41,15 @@
               <th>Last Name</th>
               <th>Email</th>
               <th>Mobile</th>
+              <th>Profile Image</th>
               <th>Action</th>
               <!-- Add more columns as needed -->
           </tr>
       </thead>
       <tbody>
+        @php
+          $file_path = config('app.global_variables.CustomerProfilePath');
+        @endphp
           @foreach ($customers as $key => $customer)
               <tr>
                   <td>{{ $key+1 }}</td>
@@ -53,6 +57,13 @@
                   <td>{{ $customer->last_name }}</td>
                   <td>{{ $customer->email }}</td>
                   <td>{{ $customer->mobile_number }}</td>
+                  <td>
+                    @if ($customer->profile_image != '')
+                    <div class="img">
+                      <img height="50px" width="auto" src="{{asset($file_path.$customer->profile_image)}}" alt="profile_image">
+                    </div>
+                    @endif
+                  </td>
                   <td>
                     <a class="btn" href="{{route('EditCustomer' , [$customer->id])}}"> Edit </a>
                     <a class="btn" href="{{route('DeleteCustomer' , [$customer->user_id])}}">Delete</a>
