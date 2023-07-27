@@ -45,6 +45,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('CustomerList') }}">Customer List</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('ChangePassword') }}">Change Password</a>
+            </li>
             <li>
               <!-- Authentication -->
               <form class="d-none" method="POST" id="logout-form" action="{{ route('logout') }}">

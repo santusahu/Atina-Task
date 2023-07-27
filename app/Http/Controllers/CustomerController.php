@@ -165,4 +165,12 @@ class CustomerController extends Controller
 
         return redirect()->route('CustomerList')->with('success', 'customer deleted successfully.');
     }
+
+
+    /**
+     * Change Password form view
+     */
+    public function ChangePasswordFoem(){
+        return view('profile.ChangePasswordForm');
+     }
 }
